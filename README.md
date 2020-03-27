@@ -1,5 +1,7 @@
 CodeVSCovid hackathon
 
+APP NAME: CARETAKER <3 
+
 Doctors/Nurses are our first line of defense in this battle against COVID-19. For helping them in their daily routines and patients round-up; the following idea is curated for their better time management. 
 
 ## IDEA:
