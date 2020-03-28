@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Rotation Calendar
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,5 +21,22 @@
 [format]="'YYYY-MM-DD'">
 </ion-calendar>
 
-  
+<ion-list>
+  <ion-list-header>
+    
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Doctors</ion-label>
+    <ion-select [(ngModel)]="user.last" (ngModelChange)="optionsFn(item);"
+ [compareWith]="compareWith">
+      <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+ <ion-chip color={{sick_color}}>
+  <ion-label>{{sick}}</ion-label>
+</ion-chip>
+
 </ion-content>

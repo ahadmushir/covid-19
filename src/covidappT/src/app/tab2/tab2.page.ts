@@ -12,8 +12,30 @@ import { Platform } from '@ionic/angular';
 })
 
 export class Tab2Page {
+  users:any[]=[];
 
-  constructor(public platform: Platform) {}
+  constructor(public platform: Platform) {
+    this.platform.ready().then(()=>{
+    this.users = [
+      {
+        id: 1,
+        first: 'Alice',
+        last: 'Smith',
+      },
+      {
+        id: 2,
+        first: 'Bob',
+        last: 'Davis',
+      },
+      {
+        id: 3,
+        first: 'Charlie',
+        last: 'Rosenburg',
+      }
+    ];})
+
+
+  }
 
   optionsSingle: CalendarComponentOptions = {
     color: 'danger',
@@ -23,6 +45,24 @@ export class Tab2Page {
   onChange($event) {
     console.log($event);
   };
+
+
+  compareWithFn = (o1, o2) => {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  };
+
+
+  sick = "Healthy";
+  sick_color = "secondary";
+  optionsFn() {
+    console.log(this.users);
+    // if (this.users == 'Charlie Rosenburg') {
+    //   this.sick = "Out Sick";
+    //   this.sick_color = "danger";
+    // }
+  }
+  
+  // compareWith = compareWithFn;
   // Date Range
   // dateRange: { from: string; to: string; };
   // type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
